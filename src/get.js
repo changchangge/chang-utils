@@ -1,8 +1,13 @@
+function stringToPath(value){
+    return value.split('.')
+}
+
 function baseGet(object, path) {
+  path = typeof path === 'string'?stringToPath(path):path;
   let index = 0;
   const length = path.length;
 
-  while (object !== null && index < length) {
+  while (object != null && index < length) {
     object = object[path[index++]];
   }
 
