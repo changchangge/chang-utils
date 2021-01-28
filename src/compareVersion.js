@@ -4,8 +4,7 @@ function compareVersion(version, baseversion) {
   });
   const baseversionArr = baseversion.split('.').map((e) => {
     return e.replace(/[^0-9]/gi, '');
-  });
-  console.log(versionArr, baseversionArr);
+  })
   if (versionArr.join() === baseversionArr.join()) {
     return 0;
   }
