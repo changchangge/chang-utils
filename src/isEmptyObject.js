@@ -7,3 +7,5 @@ function isEmptyObject(value) {
     return false;
   }
 }
+
+export default isEmptyObject;
