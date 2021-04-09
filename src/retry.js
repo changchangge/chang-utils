@@ -1,7 +1,7 @@
-function retry(asyncRequest, times) {
-  return asyncRequest().catch((err) => {
+function retryRequest(asyncRequest, params, times) {
+  return asyncRequest(params).catch((err) => {
     if (--times) {
-      return retry(asyncRequest, times);
+      return retryRequest(asyncRequest, params, times);
     } else {
       throw err;
     }
